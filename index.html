@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background Website</title>
+    <style>
+        /* Load the Roc Grotesk font */
+        @font-face {
+            font-family: 'Roc Grotesk';
+            src: url('/Users/klayhopgood/pythonProject/ComingSoon/public/assets/Demo_Fonts/Fontspring-DEMO-rocgroteskcomp-regular.otf') format('opentype');
+        }
+
+        /* Style for the body */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Create a video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Adjust the video to cover the full viewport */
+        .video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Header styling */
+        header {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1344px;
+            width: 80%;
+            text-align: center;
+        }
+
+        /* Logo styling */
+        header img.logo {
+            width: 100px;
+            height: auto;
+            padding: 40px 0px 32px 0px;
+        }
+
+        /* Content container */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 0;
+            text-align: center;
+            font-family: 'Roc Grotesk', sans-serif;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: 50px;
+        }
+
+        /* Text styling */
+        .content h1,
+        .content p {
+            font-size: 40px;
+            margin: 0;
+            margin-top: 40px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: -0.03em;
+        }
+/* General styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.email-form {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    margin: 20px 0;
+}
+
+.email-form input {
+    width: 380px;
+    height: 48px;
+    padding: 16px;
+    border: none;
+    border-right: 1px solid #ccc;
+    border-top-left-radius: 5px; /* Rounded top-left corner */
+    border-bottom-left-radius: 5px; /* Rounded bottom-left corner */
+    outline: none;
+    font-size: 16px;
+}
+
+.email-form button {
+    width: 52px;
+    height: 48px;
+    border: none;
+    border-left: 0.5px solid #ccc;
+    border-top-right-radius: 5px; /* Rounded top-right corner */
+    border-bottom-right-radius: 5px; /* Rounded bottom-right corner */
+    background-color: #05FF00;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.email-form button:hover {
+    background-color: #04E500;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="/Users/klayhopgood/pythonProject/ComingSoon/public/assets/Background_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <header>
+        <img src="/Users/klayhopgood/pythonProject/ComingSoon/public/assets/RunDais-logo-white.svg" alt="RunDais Logo" class="logo">
+    </header>
+
+    <div class="content">
+        <h1>Launching soon.</h1>
+        <p>Sign up for exclusive access.</p>
+            <div class="email-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">></button>
+            </div>
+    </div>
+
+
+</body>
+</html>
