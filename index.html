@@ -150,12 +150,39 @@
     <div class="content">
         <h1>Launching soon.</h1>
         <p>Sign up for exclusive access.</p>
-        <form class="email-form" action="https://hooks.zapier.com/hooks/catch/16830263/384akgg/" method="post">
+        <form id="emailForm" class="email-form" action="https://hooks.zapier.com/hooks/catch/16830263/384akgg/" method="post">
             <input type="email" name="email" placeholder="Enter your email address" required>
             <button type="submit">></button>
         </form>
     </div>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Event listener for form submission
+    document.getElementById("emailForm").addEventListener("submit", function(event){
+        event.preventDefault();  // Prevents the default form submission behavior
+
+        var formData = new FormData(event.target);  // Creates a FormData object from the form
+
+        fetch(event.target.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert("Email submitted successfully!");
+            } else {
+                alert("There was an error. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("There was an error. Please try again.");
+        });
+    });
+});
+</script>
 
 </body>
 </html>
